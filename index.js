@@ -1,10 +1,17 @@
+/* eslint-disable no-unused-vars */
 const express = require("express")
+const connectDB = require("./config/db")
+const dotenv = require("dotenv").config()
+const port = 5000
+
+connectDB()
+
 const app = express()
 
-app.get("/", (req, res) => {
-  res.send("Hello, World!")
-})
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000")
-})
+app.use("/admin", require("./src/routes/admin.routes"))
+
+// eslint-disable-next-line no-console
+app.listen(port, () => console.log("Le serveur a démarré au port  " + port))
