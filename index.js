@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 const express = require("express")
-const connectDB = require("./config/db")
+const connectDB = require("./src/config/db")
 const dotenv = require("dotenv").config()
 const port = 5000
 

@@ -1,8 +1,6 @@
 const express = require("express")
 const Pages = require("../models/Pages.moduel")
-const result = require("../middelware/result")
 const router = express.Router()
-const { protect, checkPermission } = require("../middelware/auth")
 
 const {
   getPages,

@@ -1,8 +1,6 @@
 const express = require("express")
-const Menu = require("../models/NavigationMenu")
-const result = require("../middelware/result")
+const Menu = require("../models/Menu.model")
 const router = express.Router()
-const { protect, checkPermission } = require("../middelware/auth")
 
 const {
   getMenu,
@@ -10,7 +8,7 @@ const {
   addMenu,
   updateMenu,
   deleteMenu,
-} = require("../controllers/navigationMenu")
+} = require("../controllers/Menu.controller")
 
 router.get(
   result(Menu, {

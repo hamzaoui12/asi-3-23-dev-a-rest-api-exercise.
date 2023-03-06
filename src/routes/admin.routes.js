@@ -7,6 +7,7 @@ const {
   editadmin,
   deleteadmin,
 } = require("../controllers/admin.controller")
+
 router.get("/", getadmin)
 router.post("/", setadmin)
 router.put("/:id", editadmin)
